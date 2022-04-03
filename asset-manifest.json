@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/kanren/static/css/main.073c9b0a.css",
+    "main.js": "/kanren/static/js/main.a82c6717.js",
+    "static/js/787.b80219de.chunk.js": "/kanren/static/js/787.b80219de.chunk.js",
+    "static/media/logo.svg": "/kanren/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/kanren/index.html",
+    "main.073c9b0a.css.map": "/kanren/static/css/main.073c9b0a.css.map",
+    "main.a82c6717.js.map": "/kanren/static/js/main.a82c6717.js.map",
+    "787.b80219de.chunk.js.map": "/kanren/static/js/787.b80219de.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.a82c6717.js"
+  ]
+}
