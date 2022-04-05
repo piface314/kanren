@@ -1,0 +1,78 @@
+@import './theme.css';
+
+.score {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.score .score-container {
+  padding: 1rem 1rem 0rem 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 8vh;
+}
+
+.score .score-container .label {
+  min-width: 5vw;
+  flex: 1;
+  margin-right: 1rem;
+  text-align: right;
+}
+
+.score .score-container .value {
+  padding: 0.5rem;
+  flex: 2;
+  text-align: right;
+  font-size: x-large;
+}
+
+.score .history-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.score .history-container .label {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.score .history-container .listing {
+  height: 50vh;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.history-item {
+  border-bottom: 2px solid black;
+  padding: 0.5em 0em 0.5em 0em;
+}
+
+.history-item.start {
+  border: 0
+}
+
+.history-item .main {
+  display: flex;
+  flex-direction: row;
+  font-size: large;
+}
+
+.history-item .main .info {
+  font-size: inherit;
+  flex: 1;
+}
+
+.history-item .main .info code {
+  color: gray;
+}
+
+.history-item .main .points {
+  font-size: inherit;
+  text-align: right;
+  color: var(--text-highlight);
+}

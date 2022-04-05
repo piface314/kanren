@@ -1,0 +1,13 @@
+:root {
+  --background: #385c76;
+  --background-overlay: #ffffff;
+  --feature: #ff0000;
+  --feature-dark: #8e0000;
+  --feature-hover: #ff2f4b;
+  --feature-dark-hover: #8e0016;
+  --feature-active: #8d000c;
+  --text-highlight: #ff6e00;
+  --block-highlight: #ffec8c;
+  --block-disable: #c4c4c4;
+  --round: 0.5em;
+}

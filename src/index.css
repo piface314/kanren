@@ -1,6 +1,11 @@
+@import "./fonts/noto_sans_jp_regular/css.css";
+@import "./fonts/noto_sans_jp_bold/css.css";
+@import "./theme.css";
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Noto Sans JP', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -10,4 +15,73 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+svg {
+  height: 100%;
+}
+
+a:link {
+  color: var(--background);
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--background);
+}
+
+.bg-overlay {
+  background-color: var(--background-overlay);
+  border: 0;
+  border-radius: var(--round);
+  padding: 1rem;
+}
+
+.label {
+  color: var(--background-overlay);
+  font-weight: bold;
+}
+
+button {
+  outline: none;
+  border: 0;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--round);
+  color: var(--background-overlay);
+  background-color: var(--feature);
+  transform-style: preserve-3d;
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    background 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+button::before {
+  position: absolute;
+  content: '';
+  width: 100%; height: 100%;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: inherit;
+  background-color: var(--feature-dark);
+  transform: translate3d(0, 0.4em, -1em);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    background 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+button:hover {
+  background-color: var(--feature-hover);
+}
+
+button:hover::before {
+  background-color: var(--feature-dark-hover);
+}
+
+button:active {
+  background-color: var(--feature-active);
+  transform: translate(0em, 0.4em);
+}
+
+button:active::before {
+  transform: translate3d(0, 0, -1em);
 }

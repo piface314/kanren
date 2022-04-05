@@ -1,0 +1,24 @@
+@import "./theme.css";
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.header-limiter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 40vw;
+}
+
+.header-limiter button {
+  height: 6vh;
+  width: 6vh;
+}
+
+.header-limiter h1,h2,h3 {
+  margin: 0;
+  color: var(--background-overlay);
+}
