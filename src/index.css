@@ -3,7 +3,7 @@
 @import "./theme.css";
 
 
-body {
+body, input {
   margin: 0;
   font-family: 'Noto Sans JP', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

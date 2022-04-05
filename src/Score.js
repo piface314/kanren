@@ -8,14 +8,14 @@ function WordLink({word}) {
   )
 }
 
-function HistoryItem({kanji, i, j, score, words}) {
+function HistoryItem({symbol, i, j, score, words}) {
   const links = words
     .flatMap((w, i) => [', ', <WordLink key={i} word={w} />])
     .slice(1)
   return (
     <div className={"history-item" + (score > 0 ? "" : " start")}>
       <div className="main">
-        <span className="info">{kanji} <code>@({j},{i})</code></span>
+        <span className="info">{symbol} <code>@({j},{i})</code></span>
         <span className="points">{score > 0 ? '+' + score : 'start'}</span>
       </div>
       {score > 0 ?

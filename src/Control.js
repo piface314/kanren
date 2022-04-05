@@ -3,7 +3,7 @@ import { ReactComponent as RestartIcon } from './assets/restart.svg'
 import { ReactComponent as MinusIcon } from './assets/minus.svg'
 import { ReactComponent as PlusIcon } from './assets/plus.svg'
 
-function Control({ size, onReset, onChangeSize, kanjiInput }) {  
+function Control({ size, onReset, onChangeSize, symbolInput }) {  
   return (
     <div className="control">
       <div className="container">
@@ -21,8 +21,8 @@ function Control({ size, onReset, onChangeSize, kanjiInput }) {
             <PlusIcon />
           </button>
         </div>
-        <div className="kanji-guess">
-          <input {...kanjiInput} className="bg-overlay" type="text" placeholder="Type a kanji..."></input>
+        <div className="symbol-guess">
+          <input size={3} {...symbolInput} className="bg-overlay" type="text" placeholder="Type a symbol..."></input>
         </div>
       </div>
     </div>

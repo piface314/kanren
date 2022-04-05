@@ -31,13 +31,13 @@
   align-items: center;
 }
 
-.control .container .kanji-guess {
+.control .container .symbol-guess {
   margin-top: 1rem;
   display: flex;
 }
 
-.control .container .kanji-guess input {
+.control .container .symbol-guess input {
   flex: 1;
-  font-size: larger;
+  font-size: x-large;
   text-align: center;
 }
