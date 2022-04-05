@@ -1,5 +1,6 @@
 :root {
-  --background: #385c76;
+  --background-rgb: 56, 92, 118;
+  --background: rgb(var(--background-rgb));
   --background-overlay: #ffffff;
   --feature: #ff0000;
   --feature-dark: #8e0000;

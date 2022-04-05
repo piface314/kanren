@@ -37,13 +37,10 @@
   }
   
   .game {
-    display: flex;
     flex-direction: column-reverse;
-    flex: 1;
   }
   
   .board {
-    flex: 1;
     min-height: 100vw;
   }
 }

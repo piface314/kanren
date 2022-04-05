@@ -1,7 +1,11 @@
 import './Score.css'
 
 function WordLink({word}) {
-  return <a href={"https://jisho.org/search/"+word}>{word}</a>
+  return (
+    <a href={"https://jisho.org/search/"+word} target="_blank" rel="noopener noreferrer">
+      {word}
+    </a>
+  )
 }
 
 function HistoryItem({kanji, i, j, score, words}) {

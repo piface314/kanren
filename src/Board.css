@@ -41,10 +41,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: transparent;
 }
 
 .tile.filled div {
   background-color: var(--background-overlay);
+  color: black;
 }
 
 .tile.adj div {
@@ -53,6 +55,7 @@
 
 .tile.adj:hover div {
   background-color: var(--block-highlight);
+  color: black;
 }
 
 .tile.unavailable div {
