@@ -20,7 +20,7 @@
 
 .header-limiter h1,h2,h3 {
   margin: 0;
-  color: var(--background-overlay);
+  color: var(--bg-highlight);
 }
 
 @media screen and (max-width: 650px) {

@@ -1,7 +1,7 @@
 :root {
   --background-rgb: 56, 92, 118;
   --background: rgb(var(--background-rgb));
-  --background-overlay: #ffffff;
+  --bg-highlight: #ffffff;
   --feature: #ff0000;
   --feature-dark: #8e0000;
   --feature-hover: #ff2f4b;

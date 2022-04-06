@@ -1,12 +1,12 @@
 import './Spinner.css'
-
+import Overlay from './Overlay'
 
 function Spinner({msg}) {
   return (
-    <div className="spinner-cover">
+    <Overlay>
       <div className="spinner"></div>
       <h1>{msg}</h1>
-    </div>
+    </Overlay>
   )
 }
 

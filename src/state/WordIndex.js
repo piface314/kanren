@@ -17,6 +17,10 @@ export default class WordIndex {
     })
   }
 
+  static empty() {
+    return new WordIndex([], [], {})
+  }
+
   constructor(words, symbols, index) {
     this.words = words
     this.symbols = symbols

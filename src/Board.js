@@ -49,7 +49,7 @@ function Board({ gameID, size, board, floating, onClick }) {
   )
 
   return (
-    <div className="board bg-overlay">
+    <div className="board bg-highlight">
       <div className="container">
         <div id="board-scroll" className="scrolled">
           <table id="board-tiles" style={{ height: boardSize, width: boardSize }}>

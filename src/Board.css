@@ -49,12 +49,12 @@
 }
 
 .tile.filled div {
-  background-color: var(--background-overlay);
+  background-color: var(--bg-highlight);
   color: black;
 }
 
 .tile.adj div {
-  background-color: var(--background-overlay);
+  background-color: var(--bg-highlight);
 }
 
 .tile.adj:hover div {

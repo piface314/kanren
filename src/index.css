@@ -30,15 +30,15 @@ a:visited {
   color: var(--background);
 }
 
-.bg-overlay {
-  background-color: var(--background-overlay);
+.bg-highlight {
+  background-color: var(--bg-highlight);
   border: 0;
   border-radius: var(--round);
   padding: 1rem;
 }
 
 .label {
-  color: var(--background-overlay);
+  color: var(--bg-highlight);
   font-weight: bold;
 }
 
@@ -50,7 +50,7 @@ button {
   justify-content: center;
   align-items: center;
   border-radius: var(--round);
-  color: var(--background-overlay);
+  color: var(--bg-highlight);
   background-color: var(--feature);
   transform-style: preserve-3d;
   transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),

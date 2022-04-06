@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from 'react'
 import './App.css'
+import React, { useEffect, useState } from 'react'
 import Header from './Header'
 import Score from './Score'
 import Board from './Board'
 import Controls from './Control'
 import Spinner from './utils/Spinner'
+
+import Help from './Help'
+import About from './About'
 
 import wordsJP from './words.json'
 import SymbolBoard from './state/SymbolBoard'
@@ -17,12 +20,14 @@ function parseInput(v) {
   return v.trimStart()[0] || ""
 }
 
-let wordIndex = new WordIndex([], [], {})
+let wordIndex = WordIndex.empty()
 
 function App() {
   const [loading, setLoading] = useState(true)
+  const [displayHelp, setDisplayHelp] = useState(false)
+  const [displayAbout, setDisplayAbout] = useState(false)
   const [gameID, setGameID] = useState(0)
-  const [size, setSize] = useState(5)
+  const [size, setSize] = useState(7)
   const [history, setHistory] = useState([])
   const [symbol, setSymbol] = useState("")
   const symbolInput = {
@@ -57,7 +62,7 @@ function App() {
     if (used[symbol])
       return
     const matches = board.moves(i, j).map(([i_, j_]) => {
-        const [s2, _] = board.get(i_, j_)
+        const [s2] = board.get(i_, j_)
         if (!s2) return null
         return wordIndex.get(symbol, s2)
       }).filter(w => w)
@@ -80,7 +85,7 @@ function App() {
   return (
     <>
       <div className="app">
-        <Header />
+        <Header help={() => setDisplayHelp(true)} about={() => setDisplayAbout(true)} />
         <div className="game">
           <Score history={history} />
           <Board gameID={gameID} size={size} board={board}
@@ -90,6 +95,9 @@ function App() {
         </div>
       </div>
       {loading ? <Spinner msg="Loading..." /> : null}
+      {displayHelp ? <Help close={() => setDisplayHelp(false)} /> : null }
+      {displayAbout ? <About close={() => setDisplayAbout(false)} /> : null }
+      
     </>
   )
 }

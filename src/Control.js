@@ -14,7 +14,7 @@ function Control({ size, onReset, onChangeSize, symbolInput }) {
           <button onClick={() => onChangeSize(-1)}>
             <MinusIcon />
           </button>
-          <div className="size-display bg-overlay">
+          <div className="size-display bg-highlight">
             <p>{size}</p>
           </div>
           <button onClick={() => onChangeSize(+1)}>
@@ -22,7 +22,7 @@ function Control({ size, onReset, onChangeSize, symbolInput }) {
           </button>
         </div>
         <div className="symbol-guess">
-          <input size={3} {...symbolInput} className="bg-overlay" type="text" placeholder="Type a symbol..."></input>
+          <input size={3} {...symbolInput} className="bg-highlight" type="text" placeholder="Type a symbol..."></input>
         </div>
       </div>
     </div>

@@ -31,11 +31,11 @@ function Score({history}) {
     <div className="score">
       <div className="score-container">
         <div className="label">Score:</div>
-        <div className="value bg-overlay">{score}</div>
+        <div className="value bg-highlight">{score}</div>
       </div>
       <div className="history-container">
         <div className="label">History:</div>
-        <div className="listing bg-overlay">
+        <div className="listing bg-highlight">
           {history.map((s, i) => <HistoryItem key={i} {...s} />)}
         </div>
       </div>

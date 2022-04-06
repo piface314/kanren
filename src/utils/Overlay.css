@@ -1,0 +1,12 @@
+@import '../theme.css';
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background-color: rgba(var(--background-rgb), 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--bg-highlight);
+}
