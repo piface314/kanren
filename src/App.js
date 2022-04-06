@@ -13,11 +13,22 @@ import wordsJP from './words.json'
 import SymbolBoard from './state/SymbolBoard'
 import WordIndex from './state/WordIndex'
 import Play from './state/Play'
+import Dialog from './utils/Dialog'
 
 function parseInput(v) {
   if (!v)
     return ""
   return v.trimStart()[0] || ""
+}
+
+const ConfirmDialog = ({keyword, onNo, onYes}) => {
+  const confirmActions = [
+    {text: "No", onClick: () => onNo()},
+    {text: "Yes", onClick: () => {onYes(); onNo()}}
+  ]
+  return <Dialog actions={confirmActions} closeAction={0}>
+    <p>Are you sure you want to {keyword} the game?</p>
+  </Dialog>
 }
 
 let wordIndex = WordIndex.empty()
@@ -26,6 +37,7 @@ function App() {
   const [loading, setLoading] = useState(true)
   const [displayHelp, setDisplayHelp] = useState(false)
   const [displayAbout, setDisplayAbout] = useState(false)
+  const [confirm, setConfirm] = useState(null)
   const [gameID, setGameID] = useState(0)
   const [size, setSize] = useState(7)
   const [history, setHistory] = useState([])
@@ -42,14 +54,22 @@ function App() {
     board.set(i, j, symbol)
   })
 
-  const reset = (newSize) => {
-    let s = size
-    if (newSize) {
-      s = newSize
+  const reset_ = (newSize) => {
+    if (newSize !== size)
       setSize(newSize)
-    }
     setGameID(gameID + 1)
-    setHistory([Play.init(s, wordIndex)])
+    setHistory([Play.init(newSize, wordIndex)])
+  }
+
+  const reset = (newSize) => {
+    const newSize_ = newSize || size
+    const keyword = newSize ? "resize and restart" : "restart"
+    if (history.length > 1) {
+      setConfirm(<ConfirmDialog keyword={keyword}
+        onNo={() => setConfirm(null)}
+        onYes={() => reset_(newSize_)}/>)
+    } else
+      reset_(newSize_)
   }
 
   const changeSize = (delta) => {
@@ -97,7 +117,7 @@ function App() {
       {loading ? <Spinner msg="Loading..." /> : null}
       {displayHelp ? <Help close={() => setDisplayHelp(false)} /> : null }
       {displayAbout ? <About close={() => setDisplayAbout(false)} /> : null }
-      
+      {confirm}
     </>
   )
 }
